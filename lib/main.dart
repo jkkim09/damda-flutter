@@ -44,7 +44,7 @@ class _ExampleAppState extends State<_Main> {
             ),
             home: new SplashScreen(),
             routes: <String, WidgetBuilder>{
-              '/HomeScreen': (BuildContext context) => new Index(),
+              '/HomeScreen': (BuildContext context) => IndexScreen()
             });
       },
     );

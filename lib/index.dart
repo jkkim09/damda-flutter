@@ -1,33 +1,49 @@
+import 'package:damda/pages/home.dart';
+import 'package:damda/pages/test.dart';
 import 'package:flutter/material.dart';
-import 'package:theme_mode_handler/theme_mode_handler.dart';
 import 'package:theme_mode_handler/theme_picker_dialog.dart';
 
-class Index extends StatelessWidget {
-  const Index({Key key}) : super(key: key);
+class IndexScreen extends StatefulWidget {
+  @override
+  Index createState() => Index();
+}
+
+class Index extends State<IndexScreen> {
+  int _selectedIndex = 0;
+
+  static const TextStyle optionStyle =
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+
+  final List<Widget> _children = [HomePage(), TestPage()];
 
   @override
   Widget build(BuildContext context) {
-    final themeMode = ThemeModeHandler.of(context).themeMode;
+    void _onItemTapped(int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    }
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ThemeModeHandler Example'),
-      ),
-      body: Center(
-        child: Container(
-          width: 400,
-          padding: const EdgeInsets.all(50),
-          child: Card(
-            child: ListTile(
-              onTap: () => _selectThemeMode(context),
-              title: Text(themeMode.toString()),
-              subtitle: const Text('Tap to select another'),
-              trailing: const Icon(Icons.settings),
-            ),
-          ),
+        appBar: AppBar(
+          title: const Text('ThemeModeHandler Example'),
         ),
-      ),
-    );
+        body: _children[_selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            )
+          ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.amber[800],
+          onTap: _onItemTapped,
+        ));
   }
 
   void _selectThemeMode(BuildContext context) async {
