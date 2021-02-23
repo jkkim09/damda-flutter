@@ -5,6 +5,7 @@
 // import 'package:provider/provider.dart';
 
 import 'package:damda/index.dart';
+import 'package:damda/provider/count_provider.dart';
 import 'package:damda/provider/theme_provider.dart';
 import 'package:damda/splash_screen.dart';
 import 'package:damda/theme_mode_manager.dart';
@@ -18,7 +19,8 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider<ThemeProvider>.value(value: ThemeProvider())
+      ChangeNotifierProvider<ThemeProvider>.value(value: ThemeProvider()),
+      ChangeNotifierProvider<CountProvider>.value(value: CountProvider(0))
     ], child: _Main());
   }
 }
