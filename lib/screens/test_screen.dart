@@ -1,4 +1,4 @@
-import 'package:damda/provider/count_provider.dart';
+import 'package:damda/provs/count_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

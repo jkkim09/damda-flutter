@@ -1,5 +1,5 @@
-import 'package:damda/pages/home.dart';
-import 'package:damda/pages/test.dart';
+import 'package:damda/screens/home_screen.dart';
+import 'package:damda/screens/test_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_mode_handler/theme_picker_dialog.dart';
 

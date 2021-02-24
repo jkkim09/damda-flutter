@@ -5,9 +5,9 @@
 // import 'package:provider/provider.dart';
 
 import 'package:damda/index.dart';
-import 'package:damda/provider/count_provider.dart';
-import 'package:damda/provider/theme_provider.dart';
-import 'package:damda/splash_screen.dart';
+import 'package:damda/provs/count_provider.dart';
+import 'package:damda/provs/theme_provider.dart';
+import 'package:damda/screens/splash_screen.dart';
 import 'package:damda/theme_mode_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
