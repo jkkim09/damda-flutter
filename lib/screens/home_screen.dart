@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 import 'package:theme_mode_handler/theme_picker_dialog.dart';
 
-class HomePage extends StatefulWidget {
+class HomeScreen extends StatefulWidget {
   @override
-  _Home createState() => _Home();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _Home extends State<HomePage> {
+class _HomeScreenState extends State<HomeScreen> {
   void _selectThemeMode(BuildContext context) async {
     final newThemeMode = await showThemePickerDialog(context: context);
     print(newThemeMode);

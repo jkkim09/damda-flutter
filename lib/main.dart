@@ -1,15 +1,8 @@
-// import 'package:damda/index.dart';
-// import 'package:damda/provider/theme_provider.dart';
-// import 'package:damda/splash_screen.dart';
-// import 'package:flutter/material.dart';
-// import 'package:provider/provider.dart';
-
+import 'package:flutter/material.dart';
 import 'package:damda/index.dart';
 import 'package:damda/provs/count_provider.dart';
-import 'package:damda/provs/theme_provider.dart';
 import 'package:damda/screens/splash_screen.dart';
-import 'package:damda/theme_mode_manager.dart';
-import 'package:flutter/material.dart';
+import 'package:damda/provs/theme_mode_manager.dart';
 import 'package:provider/provider.dart';
 import 'package:theme_mode_handler/theme_mode_handler.dart';
 
@@ -19,7 +12,6 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(providers: [
-      ChangeNotifierProvider<ThemeProvider>.value(value: ThemeProvider()),
       ChangeNotifierProvider<CountProvider>.value(value: CountProvider(0))
     ], child: _Main());
   }

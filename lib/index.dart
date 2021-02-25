@@ -1,5 +1,5 @@
 import 'package:damda/screens/home_screen.dart';
-import 'package:damda/screens/test_screen.dart';
+import 'package:damda/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_mode_handler/theme_picker_dialog.dart';
 
@@ -14,7 +14,7 @@ class Index extends State<IndexScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
-  final List<Widget> _children = [HomePage(), TestPage()];
+  final List<Widget> _children = [HomeScreen(), SettingScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -25,29 +25,21 @@ class Index extends State<IndexScreen> {
     }
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('ThemeModeHandler Example'),
-        ),
         body: _children[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              label: 'Home',
+              label: '메인',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
+              icon: Icon(Icons.settings),
+              label: '설정',
             )
           ],
           currentIndex: _selectedIndex,
           selectedItemColor: Colors.amber[800],
           onTap: _onItemTapped,
         ));
-  }
-
-  void _selectThemeMode(BuildContext context) async {
-    final newThemeMode = await showThemePickerDialog(context: context);
-    print(newThemeMode);
   }
 }
