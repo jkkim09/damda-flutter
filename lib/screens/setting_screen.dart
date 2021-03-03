@@ -29,7 +29,9 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       Text('test1'),
                       Padding(padding: EdgeInsets.only(left: 20)),
-                      Text('test2')
+                      Text('test2'),
+                      Text('test3'),
+                      Text('test5')
                     ],
                   ),
                   Row(
